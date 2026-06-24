@@ -5,7 +5,7 @@
 A production-quality, full-stack AI customer support chatbot built for modern e-commerce. Combines **RAG knowledge retrieval**, **real-time sentiment detection**, and **11-language support** to deliver instant, accurate, empathetic support — 24/7.
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org)
-[![Gemini](https://img.shields.io/badge/Gemini-1.5_Flash-blue?style=flat-square&logo=google)](https://aistudio.google.com)
+[![Gemini](https://img.shields.io/badge/Gemini-2.5_Flash-blue?style=flat-square&logo=google)](https://aistudio.google.com)
 [![Supabase](https://img.shields.io/badge/Supabase-Postgres-green?style=flat-square&logo=supabase)](https://supabase.com)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://typescriptlang.org)
