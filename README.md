@@ -43,7 +43,7 @@ A production-quality, full-stack AI customer support chatbot built for modern e-
 
 ```
 Frontend  → Next.js 14 (App Router) + Tailwind CSS + Syne/DM Sans fonts
-AI        → Google Gemini 1.5 Flash (free tier — 15 RPM, 1M TPM)
+AI        → Google Gemini 2.5 Flash (free tier — 15 RPM, 1M TPM)
 RAG       → lib/rag.ts — keyword scoring, chunk retrieval, token budgeting
 Sentiment → lib/sentiment.ts — rule-based, zero latency, conversation-aware
 Database  → Supabase (Postgres) — free tier, 500MB
@@ -107,7 +107,7 @@ shopassist/
 ### 1 — Clone & Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/shopassist.git
+git clone https://github.com/vybex-dev/shopassist.git
 cd shopassist
 npm install
 ```
@@ -237,7 +237,7 @@ User types: "My package arrived broken, I want a refund"
                  │
                  ▼
   ┌─────────────────────────────────┐
-  │  Google Gemini 1.5 Flash        │
+  │  Google Gemini 2.5 Flash        │
   │  sendMessageStream()            │
   │  → Streams response tokens      │
   └──────────────┬──────────────────┘
@@ -384,7 +384,7 @@ curl -X POST "http://localhost:3000/api/knowledge?reload=1"
 
 ```bash
 git init && git add . && git commit -m "feat: ShopAssist hackathon entry"
-git remote add origin https://github.com/YOUR_USERNAME/shopassist.git
+git remote add origin https://github.com/vybex-dev/shopassist.git
 git push -u origin main
 ```
 
@@ -514,5 +514,5 @@ MIT — built for the FlowZint AI Hackathon 2026.
 
 <div align="center">
   <strong>ShopAssist</strong> · Built with ❤️ for FlowZint AI Hackathon 2026<br/>
-  Next.js 14 · Gemini 1.5 Flash · Supabase · Vercel · TypeScript
+  Next.js 14 · Gemini 2.5 Flash · Supabase · Vercel · TypeScript
 </div>
