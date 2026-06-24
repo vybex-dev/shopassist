@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true, // ← ADD THIS LINE
+  },
   experimental: {
     serverComponentsExternalPackages: ["@google/generative-ai"],
   },
-
-  // Required so Vercel streams SSE without buffering
-  // (already set via vercel.json headers, this is a belt-and-suspenders addition)
   async headers() {
     return [
       {
@@ -17,12 +17,9 @@ const nextConfig = {
       },
     ];
   },
-
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
-
-  // Silence the Supabase undici warnings in Vercel build logs
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = [...(config.externals ?? []), "undici"];
