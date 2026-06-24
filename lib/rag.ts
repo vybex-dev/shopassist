@@ -470,7 +470,7 @@ export interface KBStats {
 }
 
 export function getKBStats(chunks: KBChunk[]): KBStats {
-  const sections = [...new Set(chunks.map((c) => c.section))];
+  const sections = Array.from(new Set(chunks.map((c) => c.section)));
   const totalCharacters = chunks.reduce((s, c) => s + c.content.length, 0);
   const chunksBySection: Record<string, number> = {};
 
