@@ -448,7 +448,7 @@ export function formatChunksForPrompt(chunks: KBChunk[]): string {
   }
 
   const parts: string[] = [];
-  for (const [section, sectionChunks] of bySection) {
+  for (const [section, sectionChunks] of Array.from(bySection.entries())) {
     parts.push(`## ${section}`);
     for (const chunk of sectionChunks) {
       parts.push(`### ${chunk.title}`);
