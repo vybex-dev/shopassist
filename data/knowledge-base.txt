@@ -1,0 +1,123 @@
+# ShopAssist E-Commerce Knowledge Base
+# Version 1.0 — Store FAQ & Policies
+# This file is injected into the AI system prompt as context.
+
+## STORE INFORMATION
+- Store Name: FlowMart
+- Support Hours: 24/7 via AI Assistant; Human agents Mon–Fri 9am–6pm EST
+- Contact Email: support@flowmart.com
+- Phone: 1-800-FLOWMART (for escalated cases only)
+
+## ORDERS & SHIPPING
+
+### How can I track my order?
+You can track your order by visiting the "My Orders" section in your account dashboard, or by using the tracking number sent to your email. Orders are updated in real-time once shipped.
+
+### How long does shipping take?
+- Standard Shipping: 5–7 business days (Free on orders over $50)
+- Express Shipping: 2–3 business days ($8.99)
+- Overnight Shipping: Next business day ($19.99)
+- International: 10–21 business days (rates vary by destination)
+
+### Can I change or cancel my order?
+Orders can be modified or cancelled within 1 hour of placement. After that, the order enters processing and cannot be changed. Contact support immediately if you need to cancel.
+
+### My order says delivered but I haven't received it?
+First, check with neighbors and building reception. Then wait 24 hours as carriers sometimes mark early. If still missing after 24 hours, contact us and we will file a carrier claim and reship or refund within 3 business days.
+
+### Do you ship internationally?
+Yes, we ship to over 50 countries. International orders may be subject to customs duties and taxes, which are the customer's responsibility. Delivery times vary by country.
+
+## RETURNS & REFUNDS
+
+### What is your return policy?
+We accept returns within 30 days of delivery for most items. Items must be unused, in original packaging, with all tags attached. Some categories are final sale (intimates, personalized items, digital products).
+
+### How do I start a return?
+1. Go to My Orders → Select Order → Click "Return Item"
+2. Choose the return reason
+3. Print the prepaid return label (free for defective items; $4.99 deducted for other returns)
+4. Drop off at any UPS or USPS location
+
+### When will I receive my refund?
+Refunds are processed within 2–3 business days of receiving your return. Credit card refunds appear in 5–10 business days. Store credit is instant.
+
+### Can I exchange an item?
+Yes. Select "Exchange" instead of "Return" in your order details. Specify the new size/colour and we'll ship it once we receive your return.
+
+### My item arrived damaged or defective?
+We're so sorry! Please take photos and contact support within 72 hours of delivery. We will send a free replacement immediately or issue a full refund — your choice.
+
+## PAYMENTS & BILLING
+
+### What payment methods do you accept?
+We accept Visa, Mastercard, American Express, Discover, PayPal, Apple Pay, Google Pay, and Shop Pay. We also offer Buy Now Pay Later through Afterpay (4 interest-free installments).
+
+### Is my payment information secure?
+Yes. We use 256-bit SSL encryption and are PCI DSS Level 1 compliant. We never store your full card number on our servers.
+
+### Why was my payment declined?
+Common reasons: insufficient funds, billing address mismatch, card flagged by bank for security. Try a different card or contact your bank. If the issue persists, contact us.
+
+### Can I use multiple promo codes?
+Only one promo code can be used per order. However, promo codes can be combined with loyalty rewards points.
+
+### I was charged twice for my order?
+This is likely a temporary authorization hold. If the duplicate charge persists after 48 hours, contact support with your order number and we will resolve it immediately.
+
+## ACCOUNT & LOGIN
+
+### How do I create an account?
+Click "Sign Up" on the homepage. Enter your email and create a password. You'll receive a verification email — click the link to activate your account.
+
+### I forgot my password?
+Click "Forgot Password" on the login page. Enter your email and we'll send a reset link valid for 24 hours.
+
+### How do I update my shipping address or payment details?
+Go to Account Settings → Addresses or Payment Methods. You can add, edit, or delete saved information at any time.
+
+### Can I delete my account?
+Yes. Go to Account Settings → Privacy → Delete Account. This action is irreversible and will remove all your order history and data per GDPR/CCPA compliance.
+
+## PRODUCTS & INVENTORY
+
+### How do I know if an item is in stock?
+Availability is shown on each product page. If an item is out of stock, you can click "Notify Me" to receive an email when it's restocked.
+
+### Are your product photos accurate?
+We strive for accuracy but colours may vary slightly due to monitor settings. We include multiple angles and size guides for every product.
+
+### Do you price match?
+We offer price matching against major retailers for identical items. Submit a price match request with a link to the competitor's listing.
+
+### How do I know which size to order?
+Each product page includes a detailed size guide. If you're between sizes, we recommend sizing up. Our support team can also advise based on specific products.
+
+## LOYALTY & PROMOTIONS
+
+### How does the rewards program work?
+Earn 1 point per $1 spent. 100 points = $1 store credit. Points expire after 12 months of account inactivity. Sign up bonuses: 500 points on first purchase.
+
+### How do I apply a promo code?
+Enter your code in the "Promo Code" field on the checkout page before completing payment.
+
+### Why isn't my promo code working?
+Check: code hasn't expired, meets minimum order requirement, not already used, and applies to items in your cart (some codes exclude sale items).
+
+## TECHNICAL SUPPORT
+
+### The website/app isn't loading correctly?
+Try: hard refresh (Ctrl+Shift+R), clear browser cache, try incognito mode, or try a different browser. If on mobile, update the app or reinstall.
+
+### How do I unsubscribe from emails?
+Click "Unsubscribe" at the bottom of any marketing email, or go to Account Settings → Email Preferences. Processing takes 5 business days.
+
+## ESCALATION TRIGGERS (INTERNAL — DO NOT SHARE WITH CUSTOMER)
+The following situations should trigger immediate human agent escalation:
+- Customer explicitly requests to speak to a human agent
+- Order value over $500 with any issue
+- Legal threats or mention of chargebacks/disputes
+- 3rd failed resolution attempt on same issue
+- Customer expresses severe anger or uses abusive language
+- Fraud suspicion or account security concerns
+- Medical or safety-related product concerns

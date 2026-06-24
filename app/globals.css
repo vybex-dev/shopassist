@@ -2,26 +2,309 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Google Fonts — Syne (display) + DM Sans (body) ─────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap");
+/* ── CSS Variables ───────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --chat-bg: #f1f5f9;
+  --user-bubble: #2563eb;
+  --bot-bubble: #ffffff;
+  --bot-border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --escalate-bg: #fff1f2;
+  --escalate-border: #fb7185;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
 }
 
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--chat-bg);
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* ── Typing indicator ────────────────────────────────────────────── */
+.dot-1 {
+  animation: bounceDots 1.4s infinite ease-in-out both;
+  animation-delay: -0.32s;
+}
+.dot-2 {
+  animation: bounceDots 1.4s infinite ease-in-out both;
+  animation-delay: -0.16s;
+}
+.dot-3 {
+  animation: bounceDots 1.4s infinite ease-in-out both;
+}
+
+@keyframes bounceDots {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.4;
   }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Escalation pulse ────────────────────────────────────────────── */
+.escalate-pulse {
+  animation: pulseRing 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(244, 63, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+  }
+}
+
+/* ── Gradient text ───────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass card ──────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ── Streaming cursor blink ──────────────────────────────────────── */
+@keyframes cursorBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.streaming-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: currentColor;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cursorBlink 0.8s step-end infinite;
+}
+
+/* ── Message slide-up ────────────────────────────────────────────── */
+@keyframes slideUp {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-slide-up {
+  animation: slideUp 0.22s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-in-out both;
+}
+/* ── Suggestion chip entrance ─────────────────────────────────── */
+@keyframes chipIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reusable class — fill-mode "both" so delay doesn't flash the element */
+.animate-chip-in {
+  animation: chipIn 0.22s cubic-bezier(0.34, 1.26, 0.64, 1) both;
+}
+
+/* Skeleton shimmer ──────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+/* ═══════════════════════════════════════════════════════════════
+   STEP 13 — Mobile & iOS fixes
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Dynamic viewport height ─────────────────────────────────────
+   100dvh shrinks when the soft keyboard opens on iOS/Android,
+   keeping the input always visible. 100vh does NOT do this.       */
+.h-dvh {
+  height: 100dvh;
+}
+.min-h-dvh {
+  min-height: 100dvh;
+}
+
+/* ── Safe area utilities (iPhone X+ notch / home indicator) ──────
+   Use these on elements pinned to the top or bottom of the screen. */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Input bar: whichever is larger — normal padding OR safe area.
+   On iPhone with home indicator, env(...) wins (~34px).
+   On iPhone without, max() falls back to the normal padding.      */
+.pb-input-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* ── Tap feedback & target size ──────────────────────────────────
+   -webkit-tap-highlight-color: removes the grey flash on Android.
+   touch-action: manipulation — suppresses the 300ms double-tap
+   delay that used to exist on all mobile browsers.                 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"],
+a {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* Apple HIG: interactive elements ≥ 44 × 44 CSS px.
+   We exempt tiny chips (.chip-touch-exempt) from this rule
+   because they're secondary actions with adequate spacing.         */
+@media (pointer: coarse) {
+  button:not(.chip-touch-exempt),
+  [role="button"]:not(.chip-touch-exempt) {
+    min-height: 44px;
+  }
+}
+
+/* ── iOS auto-zoom prevention ────────────────────────────────────
+   iOS Safari zooms in whenever a focused <input> or <textarea>
+   has font-size < 16px. We bump to 16px on mobile only.           */
+@supports (-webkit-overflow-scrolling: touch) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* ── Overscroll behaviour ────────────────────────────────────────
+   contain: parent doesn't scroll when child reaches its end.
+   Prevents the chat messages area from accidentally triggering
+   Android's pull-to-refresh while scrolling up.                   */
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+.overscroll-none {
+  overscroll-behavior: none;
+}
+
+/* ── Momentum scrolling on iOS ───────────────────────────────────
+   Required on iOS for smooth native-feel scroll inside
+   overflow-y: auto / scroll containers.                           */
+.ios-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Hide scrollbar (cross-browser) ──────────────────────────────
+   Used on horizontal chip strips and any overflow-x container.    */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Landscape mode: reduce padding so chat isn't cramped ─────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .landscape-compact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .landscape-hide {
+    display: none;
+  }
+}
+
+/* ── Responsive admin chart heights ─────────────────────────────
+   recharts ResponsiveContainer reads the DOM height, so we
+   shrink the container itself via a CSS variable on small screens. */
+:root {
+  --chart-height: 200px;
+}
+@media (max-width: 640px) {
+  :root {
+    --chart-height: 150px;
+  }
+}
+
+/* ── Prevent font scaling on some Android browsers ───────────────  */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
