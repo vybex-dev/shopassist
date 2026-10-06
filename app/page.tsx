@@ -23,6 +23,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import PoweredByVybex from "@/components/PoweredByVybex";
 import {
   ShoppingBag,
   Sparkles,
@@ -1013,6 +1014,7 @@ export default function HomePage() {
               </Link>
               <span>Next.js 14 · Gemini 2.5 Flash · Supabase · Vercel</span>
             </div>
+            <PoweredByVybex className="text-[11px]" />
           </div>
         </footer>
       </div>

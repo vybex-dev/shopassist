@@ -308,3 +308,46 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+
+/* ── "Powered by VYBEX" — animated holographic gradient wordmark ── */
+:root {
+  --vybex-gradient: linear-gradient(
+    135deg,
+    oklch(0.65 0.22 295) 0%,
+    oklch(0.72 0.22 340) 30%,
+    oklch(0.85 0.16 200) 60%,
+    oklch(0.88 0.18 130) 100%
+  );
+}
+@keyframes vybex-holo-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.powered-by-vybex {
+  text-decoration: none;
+  color: #64748b;
+  transition: color 0.18s;
+}
+.powered-by-vybex:hover {
+  color: #94a3b8;
+}
+.powered-by-vybex .pbv-wordmark {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background-image: var(--vybex-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: vybex-holo-shift 8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .powered-by-vybex .pbv-wordmark {
+    animation: none;
+  }
+}

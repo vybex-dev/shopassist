@@ -42,6 +42,7 @@ import {
   EscalationsTable,
 } from "@/components/AdminChart";
 import type { AnalyticsData } from "@/types";
+import PoweredByVybex from "@/components/PoweredByVybex";
 
 // ─── Password gate ────────────────────────────────────────────────
 // Simple client-side check — good enough for a hackathon demo.
@@ -410,6 +411,9 @@ function Dashboard() {
                 · Demo mode — connect Supabase for live data
               </span>
             )}
+          </p>
+          <p className="mt-1 text-[10px]">
+            <PoweredByVybex />
           </p>
         </footer>
       </main>
